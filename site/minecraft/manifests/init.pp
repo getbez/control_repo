@@ -5,7 +5,7 @@ class minecraft (
   file {'/opt/minecraft':
     ensure => directory
   }
-  file {"${install_dir}/server.jar"}:
+  file {"${install_dir}/server.jar":
     ensure => file,
     source => $url,
     before => Service['minecraft'],
